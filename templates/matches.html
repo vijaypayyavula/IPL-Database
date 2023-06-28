@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% block title %}
+    Matches
+{% endblock %}
+{% block head %}
+<link rel="stylesheet" href="../static/css-files/playerstats.css">
+{% endblock %}
+{% block content %}
+<div class="row" style="text-align: center;">
+    <div id="rcb" style="margin: 7% 0% 5% 0%">
+      <div class="card card-body">
+        <section>
+          <!--for demo wrap-->
+          <h2 style="text-align: center; color: rgb(2, 25, 124); "><strong>Matches</strong></h2>
+          <div class="tbl-header">
+            <table cellpadding="0" cellspacing="0" style="background-image: url('../static/web-images/1092589.jpg');">
+              <thead>
+                <tr>
+                  <th>Match No</th>
+                  <th>Won</th>
+                  <th>Lost</th>
+                  <th>Date</th>
+                  <th>MOM</th>
+                  <th>Stadium</th>
+                </tr>
+              </thead>
+            </table>
+          </div>
+          <div class="tbl-content">
+            <table cellpadding="0" cellspacing="0" style="background-image: url('../static/web-images/1092589.jpg');">
+              <tbody>
+              {% for mat in match: %}
+                <tr>
+                    <th>{{mat['match_no']}}</th>
+                    <th>{{mat['won_team_name']}}</th>
+                    <th>{{mat['lost_team_name']}}</th>
+                    <th>{{mat['date']}}</th>
+                    <th>{{mat['mom']}}</th>
+                    <th>{{mat['stadium_name']}}</th>
+                  </tr>
+              {% endfor %}
+              </tbody>
+            </table>
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+{% endblock %}

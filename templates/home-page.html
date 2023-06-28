@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block title %}
+    Home Page
+{% endblock %}
+{% block head %}
+  <link href="../static/css-files/homepage.css" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+<div class="cards-list">
+  
+    <div class="card 1" >
+      <div class="card_image"> 
+        <a class="card_image" href="/player%stats#rcb">
+        <img src="../static/web-images/rcb-logo.jpg"/> 
+        </a>
+      </div>
+      <div class="card_title title-white">
+      </div>
+    </div>
+    
+      <div class="card 2">
+      <div class="card_image">
+      <a class="card_image" href="/player%stats#srh">
+        <img src="../static/web-images/srh-logo.png" href="matches.html" />
+      </a>
+        </div>
+      <div class="card_title title-white">
+      </div>
+    </div>
+    
+  </div>
+  <hr class="rgba-white-light" style="margin: 0 15%;">
+  <h5 style="text-align:center;margin-top:1%;color:red">Sorry, will add other teams soon >.<</h5>
+{% endblock %}

@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.88.1">
+    <title>sign-in page</title>
+    <link href="../static/assets/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            user-select: none;
+        }
+
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+            font-size: 3.5rem;
+            }
+        }
+
+
+    </style>
+     <link href="../static/css-files/signin.css" rel="stylesheet">
+
+
+  </head>
+  <body class="text-center">
+    <main class="form-signin">
+        <form action="#" method="POST">
+            <img class="mb-4" src="../static/web-images/ipl-logo-new-old.png" alt="" width="180" height="100">
+            <h2 class="h3 mb-3 fw-normal" style="color: white;">Please sign up</h2>
+
+            <div class="form-floating">
+            <input type="text" class="form-control" id="floatingFName" placeholder="FirstName" name="fname" style="border-radius: 5px 5px 0px 0px;" required>
+            <label for="floatingFName">First Name</label>
+            </div>
+
+            <div class="form-floating">
+            <input type="text" class="form-control" id="floatingLName" placeholder="LastName" name="lname" style="border-radius: 0px;">
+            <label for="floatingLName">Last Name</label>
+            </div>
+
+            <div class="form-floating">
+            <input type="text" class="form-control" id="floatingUserID" placeholder="UserName" name="username" style="border-radius: 0px" required>
+            <label for="floatingUserID">User Name</label>
+            </div>
+
+            <div class="form-floating">
+            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" name="email_id" style="border-radius: 0px" required>
+            <label for="floatingInput">Email address</label>
+            </div>
+
+            <div class="form-floating">
+            <input type="password" class="form-control" id="floatingPassword" placeholder="Password" name="password" style="border-radius: 0px 0px 5px 5px;" required>
+            <label for="floatingPassword">Password</label>
+            </div>
+
+            <div class="checkbox mb-3">
+            <label>
+                <input type="checkbox" value="remember-me" > Remember me
+            </label>
+            </div>
+            <button class="w-100 btn btn-lg btn-primary" type="submit" value="Submit">Sign in</button>
+            <p class="mt-5 mb-3 text-muted">2016</p>
+        </form>
+    </main>
+  </body>
+</html>

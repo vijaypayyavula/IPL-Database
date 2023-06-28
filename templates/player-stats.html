@@ -1,0 +1,139 @@
+
+{% extends "base.html" %}
+{% block title %}
+   Player Stats
+{% endblock %}
+
+{% block head %}
+<link rel="stylesheet" href="../static/css-files/playerstats.css">
+{% endblock %}
+
+{% block content %}
+
+      <div id="rcb">
+        <div class="card card-body">
+          <section>
+              <h2 style="color:white; background-color: rgb(189, 0, 0); border-radius:5px;">
+                  <img src="../static/web-images/rcb-edit.png" width="100px">
+                 ROYAL CHALLENGERS BANGALORE
+              </h2>
+            <div class="team-details">
+              <div style="color:rgb(207, 0, 0)">
+                 <h5>
+                     Owner : {{rcbd['ownername']}}
+                      <span style="float:right; margin-right:50px">
+                          Captain : {{rcbd['captain']}}
+                      </span>
+                  </h5>
+              </div>
+            </div>
+            <div class="tbl-header">
+              <table cellpadding="0" cellspacing="0" style="background-image: linear-gradient(to right,black,rgb(126, 0, 0),rgb(187, 0, 0));">
+                <thead>
+                  <tr>
+                    <th style="padding-left:2%">No</th>
+                    <th>Player Name</th>
+                    <th style="padding-left:2%">Role</th>
+                    <th> Innings</th>
+                    <th>Runs</th>
+                    <th>Wickets</th>
+                      <th>50s</th>
+                      <th>100s</th>
+                      <th>3 Wicket Haul</th>
+                  </tr>
+                </thead>
+              </table>
+            </div>
+            <div class="tbl-content">
+              <table cellpadding="0" cellspacing="0"  style="background-image: linear-gradient(to right,black,rgb(126, 0, 0),rgb(187, 0, 0));">
+                <tbody>
+               {% for player in rcb %}
+                <tr>
+                  <td style="padding-left:2%">{{player['player_id']}}</td>
+                   <td>{{player['player_name']}}</td>
+                   <td style="padding-left:2%">{{player['player_role']}}</td>
+                    <td> {{player['innings']}} </td>
+                    <td>{{player['runs']}}</td>
+                    <td>{{player['wickets']}}</td>
+                    <td>{{player['50s']}}</td>
+                    <td>{{player['100s']}}</td>
+                    <td>{{player['3wh']}}</td>
+                  </tr>
+                {% endfor %}
+                </tbody>
+              </table>
+            </div>
+          </section>
+        </div>
+      </div>
+
+      <div id="srh" style="margin: 7% 0% 5% 0%">
+        <div class="card card-body">
+          <section>
+            <!--for demo wrap-->
+            <h2 style="color:white; background-color:darkorange; border-radius:5px">
+                <img src="../static/web-images/srh-edit.png" width="100px">
+                SUNRISERS HYDERABAD
+            </h2>
+
+            <div class="team-details">
+                <div style="color:orange">
+                  <h5>
+                      OWNER : {{srhd['ownername']}}
+                      <span style="float:right; margin-right:50px">
+                          CAPTAIN : {{srhd['captain']}}
+                      </span>
+                  </h5>
+                </div>
+            </div>
+            <div class="tbl-header">
+             <table cellpadding="0" cellspacing="0" style="background-image: linear-gradient(to right,black , rgb(126, 30, 1), rgb(189, 75, 0));">
+                <thead>
+                <tr>
+                    <th style="padding-left:2%">No</th>
+                    <th>Player Name</th>
+                    <th style="padding-left:2%">Role</th>
+                    <th> Innings</th>
+                    <th>Runs</th>
+                    <th>Wickets</th>
+                      <th>50s</th>
+                      <th>100s</th>
+                      <th>3 Wicket Haul</th>
+                  </tr>
+                </thead>
+              </table>
+            </div>
+            <div class="tbl-content">
+              <table cellpadding="0" cellspacing="0" style="background-image: linear-gradient(to right,black , rgb(126, 30, 1), rgb(189, 75, 0));">
+                <tbody>
+               {% for player in srh %}
+                <tr>
+                  <td style="padding-left:2%">{{player['player_id']}}</td>
+                   <td>{{player['player_name']}}</td>
+                   <td style="padding-left:2%">{{player['player_role']}}</td>
+                    <td> {{player['innings']}} </td>
+                    <td>{{player['runs']}}</td>
+                    <td>{{player['wickets']}}</td>
+                    <td>{{player['50s']}}</td>
+                    <td>{{player['100s']}}</td>
+                    <td>{{player['3wh']}}</td>
+                  </tr>
+                {% endfor %}
+
+
+                </tbody>
+              </table>
+            </div>
+          </section>
+        </div>
+      </div>
+
+
+
+    <script>
+      $(window).on("load resize ", function() {
+      var scrollWidth = $('.tbl-content').width() - $('.tbl-content table').width();
+      $('.tbl-header').css({'padding-right':scrollWidth});
+    }).resize();
+  </script>
+{% endblock %}

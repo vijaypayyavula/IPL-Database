@@ -1,0 +1,90 @@
+
+{% extends "base.html" %}
+{% block title %}
+   Staff Details
+{% endblock %}
+
+{% block head %}
+<link rel="stylesheet" href="../static/css-files/playerstats.css">
+{% endblock %}
+
+{% block content %}
+
+  <div class="row">
+    <div class="col">
+      <div id="rcb" style="margin: 7% 0% 5% 0%">
+        <div class="card card-body">
+          <section>
+            <!--for demo wrap-->
+            <h2 style="text-align: center; color: red; ">ROYAL CHALLENGERS BANGALORE</h2>
+            <div class="tbl-header">
+              <table cellpadding="0" cellspacing="0" style="background-image: linear-gradient(to right,black,rgb(126, 0, 0),rgb(187, 0, 0))">
+                <thead>
+                  <tr>
+<!--                    <th>Staff ID</th>-->
+                    <th>Staff Name</th>
+                    <th>Staff Role</th>
+                  </tr>
+                </thead>
+              </table>
+            </div>
+            <div class="tbl-content">
+              <table cellpadding="0" cellspacing="0"  style="background-image: linear-gradient(to right,black,rgb(126, 0, 0),rgb(187, 0, 0))">
+                <tbody>
+                {% for info in rcb %}
+                 <tr>
+<!--                    <th style="border-bottom: solid 1px rgba(255,255,255,0.1);">{{info['staff_id']}}</th>-->
+                    <th style="border-bottom: solid 1px rgba(255,255,255,0.1);">{{info['staff_name']}}</th>
+                     <th style="padding-left: 5%; border-bottom: solid 1px rgba(255,255,255,0.1);">{{info['staff_role']}}</th>
+                  </tr>
+                {% endfor %}
+                </tbody>
+              </table>
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div id="srh" style="margin: 7% 0% 5% 0%">
+        <div class="card card-body">
+          <section>
+            <!--for demo wrap-->
+            <h2 style="text-align: center; color: orange">SUNRISERS HYDERABAD</h2>
+            <div class="tbl-header">
+              <table cellpadding="0" cellspacing="0" style="background-image: linear-gradient(to right,black , rgb(126, 30, 1), rgb(189, 75, 0) )">
+                <thead>
+                  <tr>
+<!--                    <th>Staff ID</th>-->
+                    <th>Staff Name</th>
+                    <th>Staff Role</th>
+                  </tr>
+                </thead>
+              </table>
+            </div>
+            <div class="tbl-content">
+              <table cellpadding="0" cellspacing="0" style="background-image: linear-gradient(to right,black , rgb(126, 30, 1), rgb(189, 75, 0) )">
+                <tbody>
+                  {% for info in srh %}
+                 <tr>
+<!--                    <th style="border-bottom: solid 1px rgba(255,255,255,0.1);">{{info['staff_id']}}</th>-->
+                    <th style="border-bottom: solid 1px rgba(255,255,255,0.1);">{{info['staff_name']}}</th>
+                     <th style="padding-left: 5%; border-bottom: solid 1px rgba(255,255,255,0.1);">{{info['staff_role']}}</th>
+                  </tr>
+                {% endfor %}
+                </tbody>
+              </table>
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <script>
+      $(window).on("load resize ", function() {
+      var scrollWidth = $('.tbl-content').width() - $('.tbl-content table').width();
+      $('.tbl-header').css({'padding-right':scrollWidth});
+    }).resize();
+  </script>
+{% endblock %}

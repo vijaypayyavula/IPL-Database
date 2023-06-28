@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% block title %}
+    Points-table
+{% endblock %}
+{% block head %}
+<link rel="stylesheet" href="../static/css-files/playerstats.css">
+{% endblock %}
+{% block content %}
+<div class="row" style="text-align: center;">
+    <div id="rcb" style="margin: 7% 0% 5% 0%">
+      <div class="card card-body">
+        <section>
+          <!--for demo wrap-->
+          <h2 style="text-align: center; color: rgb(2, 25, 124); "><strong>Points Table</strong></h2>
+          <div class="tbl-header">
+            <table cellpadding="0" cellspacing="0" style="background-image: url('../static/web-images/1092589.jpg');">
+              <thead>
+                <tr>
+                  <th>Team Name</th>
+                  <th>Matches Played</th>
+                  <th>Won</th>
+                  <th>Lost</th>
+                  <th>Points</th>
+                </tr>
+              </thead>
+            </table>
+          </div>
+          <div class="tbl-content">
+            <table cellpadding="0" cellspacing="0" style="background-image: url('../static/web-images/1092589.jpg');">
+              <tbody>
+                {% for team in pts %}
+                <tr>
+                    <th>{{team[0]['team_name']}}</th>
+                    <th>{{(team[0]['won_count'])+(team[0]['lost_count'])}}</th>
+                    <th>{{team[0]['won_count']}}</th>
+                    <th>{{team[0]['lost_count']}}</th>
+                    <th>{{team[0]['points']}}</th>
+                  </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+{% endblock %}
